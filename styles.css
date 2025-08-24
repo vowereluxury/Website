@@ -1,0 +1,375 @@
+/* Fonts */
+body {
+  margin: 0;
+  font-family: 'Cormorant Garamond', serif;
+  background-color: #fff;
+  color: #000;
+}
+
+/* Header */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Logo */
+.logo img {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Nav */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  position: relative;
+}
+
+nav ul li a {
+  text-decoration: none;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  color: #000;
+  transition: color 0.3s;
+  padding: 5px 0;
+  display: block;
+}
+
+nav ul li a:hover {
+  color: #aaa;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  min-width: 160px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  z-index: 1000;
+  padding: 10px 0;
+}
+
+.dropdown-menu li a {
+  padding: 8px 16px;
+  font-size: 0.95rem;
+  color: #000;
+  white-space: nowrap;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* WhatsApp CTA in header */
+.whatsapp-cta a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #25D366;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.whatsapp-cta a:hover {
+  background-color: #1ebe57;
+  transform: scale(1.05);
+}
+
+.whatsapp-cta i {
+  font-size: 18px;
+}
+
+/* Hero */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.video-container {
+  display: flex;
+  justify-content: center;  /* horizontally center */
+  align-items: center;      /* vertically center */
+  width: 100%;
+  margin: 0 auto;
+}
+
+.video-container video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+/* About Us Section */
+.about {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: #f9f9f9;
+}
+
+.about h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  font-family: 'Playfair Display', serif;
+}
+
+.about p {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Fashion Lines */
+#fashion-lines {
+  padding: 50px 20px;
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+}
+
+#fashion-lines h2 {
+  font-size: 32px;
+  margin-bottom: 30px;
+}
+
+.fashion-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.fashion-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.fashion-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.fashion-item:hover img {
+  transform: scale(1.08);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Overlay */
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 15px;
+  text-align: center;
+  transition: background 0.3s ease;
+}
+
+.overlay p {
+  margin: 0;
+  color: #fff;
+  font-size: 18px;
+  letter-spacing: 1px;
+  transition: opacity 0.3s ease;
+}
+
+.fashion-item:hover .overlay {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.board-content {
+  text-align: center;   /* Centers both h1 and h2 */
+  margin: 40px auto;
+}
+
+.board-content h1 {
+  font-size: 3rem;      /* Makes h1 bigger */
+  margin-bottom: 10px;
+}
+
+/* Fashion line colors for h1 */
+.ardor-hero h1 { color: #B22222; }    /* Red */
+.regal-hero h1 { color: #8B4513; }    /* Brown */
+.pearl-hero h1 { color: #800080; }    /* Purple */
+.empress-hero h1 { color: #FFD700; }  /* Gold */
+.baberry-hero h1 { color: #FF69B4; }  /* Pink */
+.allure-hero h1 { color: #800000; }   /* Maroon */
+
+.board-content h2 {
+  font-size: 2rem;      /* Makes h2 bigger */
+  font-style: italic;   /* Italic text */
+  font-weight: normal;    /* normal text */
+  margin-top: 10px;
+}
+
+
+/* Footer */
+footer {
+  background-color: white;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  border-top: 1px solid #ddd;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+}
+
+.footer-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.footer-left a {
+  font-size: 14px;
+  color: black;
+  transition: color 0.3s ease;
+  font-weight: 400;
+}
+
+.footer-left a:hover {
+  color: gray;
+}
+
+/* WhatsApp CTA in footer */
+.footer-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  color: black;
+  font-size: 14px;
+  font-weight: 400;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-whatsapp:hover {
+  color: gray;
+}
+
+.footer-right p {
+  margin: 3px 0;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.footer-right a {
+  color: black;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.footer-right a:hover {
+  text-decoration: underline;
+}
+
+/* ============================= */
+/* RESPONSIVE STYLES */
+/* ============================= */
+
+@media (max-width: 1024px) {
+  .fashion-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-wrap: wrap;
+    padding: 10px 15px;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    width: 100%;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .whatsapp-cta a {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+
+  .hero {
+    height: 60vh;
+  }
+
+  .about h2,
+  #fashion-lines h2 {
+    font-size: 24px;
+  }
+
+  .fashion-grid {
+    grid-template-columns: 1fr;
+  }
+
+  footer {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+    gap: 10px;
+  }
+
+  .footer-left {
+    justify-content: center;
+  }
+
+  .footer-right {
+    text-align: center;
+  }
+}
