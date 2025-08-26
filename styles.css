@@ -384,10 +384,15 @@ footer {
   padding: 0 20px;
 }
 
+/* Scroll-snap + swipe support */
 .carousel-track {
   display: flex;
-  transition: transform 0.5s ease;
-  gap: 20px; /* spacing between items */
+  gap: 20px;
+  overflow-x: auto; /* allow horizontal scrolling on mobile */
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch; /* smooth on iOS */
+  scroll-behavior: smooth; /* smooth scroll */
+  transition: transform 0.5s ease; /* still works for arrows */
 }
 
 .carousel-item {
@@ -398,6 +403,7 @@ footer {
   text-align: center;
   display: flex;
   flex-direction: column;
+  scroll-snap-align: start; /* snap each item */
 }
 
 .carousel-item img {
