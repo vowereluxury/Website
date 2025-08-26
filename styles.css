@@ -482,14 +482,13 @@ footer {
 
 /* Adjust spacing on mobile */
 @media (max-width: 768px) {
-  /* Reduce bottom spacing of hero/video */
   .hero {
-    margin-bottom: 20px; /* or adjust to taste */
+    height: auto;        /* let hero shrink to video height */
+    margin-bottom: 20px; /* spacing between hero and about */
   }
 
-  /* Reduce top padding of About to tighten gap */
   .about {
-    padding-top: 20px;   /* same as bottom spacing */
-    padding-bottom: 40px; /* matches About → Fashion spacing */
+    padding-top: 20px;   /* tighten top of about */
+    padding-bottom: 40px; /* match About → Fashion spacing */
   }
 }
