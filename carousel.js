@@ -1,49 +1,34 @@
 const track = document.getElementById('carouselTrack');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+const items = track.querySelectorAll('.carousel-item');
+let currentIndex = 0;
 
-// Enable swipe/drag scroll behavior
-let isDown = false;
-let startX;
-let scrollLeft;
+function getVisibleItems() {
+  if (window.innerWidth <= 768) return 1;   // mobile
+  if (window.innerWidth <= 1024) return 2;  // tablet
+  return 3;                                 // desktop
+}
 
-track.addEventListener('mousedown', (e) => {
-  isDown = true;
-  track.classList.add('dragging');
-  startX = e.pageX - track.offsetLeft;
-  scrollLeft = track.scrollLeft;
+function updateCarousel() {
+  const itemWidth = items[0].offsetWidth + 20; // include gap
+  const visibleItems = getVisibleItems();
+  track.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+
+  // disable buttons when at edges
+  prevBtn.disabled = currentIndex === 0;
+  nextBtn.disabled = currentIndex >= items.length - visibleItems;
+}
+
+prevBtn.addEventListener('click', () => {
+  currentIndex = Math.max(currentIndex - getVisibleItems(), 0);
+  updateCarousel();
 });
 
-track.addEventListener('mouseleave', () => {
-  isDown = false;
-  track.classList.remove('dragging');
+nextBtn.addEventListener('click', () => {
+  currentIndex = Math.min(currentIndex + getVisibleItems(), items.length - getVisibleItems());
+  updateCarousel();
 });
 
-track.addEventListener('mouseup', () => {
-  isDown = false;
-  track.classList.remove('dragging');
-});
-
-track.addEventListener('mousemove', (e) => {
-  if (!isDown) return;
-  e.preventDefault();
-  const x = e.pageX - track.offsetLeft;
-  const walk = (x - startX) * 2; // scroll speed
-  track.scrollLeft = scrollLeft - walk;
-});
-
-// Touch support for mobile
-track.addEventListener('touchstart', (e) => {
-  isDown = true;
-  startX = e.touches[0].pageX;
-  scrollLeft = track.scrollLeft;
-});
-
-track.addEventListener('touchend', () => {
-  isDown = false;
-});
-
-track.addEventListener('touchmove', (e) => {
-  if (!isDown) return;
-  const x = e.touches[0].pageX;
-  const walk = (x - startX) * 2; // scroll speed
-  track.scrollLeft = scrollLeft - walk;
-});
+window.addEventListener('resize', updateCarousel);
+updateCarousel();
