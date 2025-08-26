@@ -439,9 +439,4 @@ footer {
   .carousel-item {
     flex: 1 0 100%; /* 1 per row on mobile */
   }
-
-  .carousel-arrow {
-    font-size: 20px;
-    padding: 12px 14px;
-  }
 }
