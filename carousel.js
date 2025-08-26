@@ -13,6 +13,8 @@ function getVisibleItems() {
 function updateCarousel() {
   const itemWidth = items[0].offsetWidth + 20; // include gap
   const visibleItems = getVisibleItems();
+
+  // only use transform for arrows, not for swipe
   track.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
 
   // disable buttons when at edges
